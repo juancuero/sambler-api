@@ -3,13 +3,9 @@ const app = express();
 
 const { config } = require("./config/index");
 
-app.get("/", function(req, res) {
-  res.send("hello world");
-});
+const publicationsApi = require("./routes/publications.js");
 
-app.get("/json", function(req, res) {
-  res.json({ hello: "world" });
-});
+publicationsApi(app);
 
 app.listen(config.port, function() {
   console.log(`Listening http://localhost:${config.port}`);

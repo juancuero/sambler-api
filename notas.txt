@@ -25,3 +25,8 @@ con la siguiente configuracion:
 - se crear el archivo index.js en raiz y se crea el hola mundo
 
 ** Relative Path para que ponga la ruta del archivo
+
+- creo una carpeta routes y el archivo
+
+- creo un mock en utils/mocks y lo exporto
+
