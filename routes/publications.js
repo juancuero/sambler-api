@@ -1,13 +1,15 @@
 const express = require("express");
-const { publicationsMock } = require("../utils/mocks/publications");
+const PublicationsService = require("../services/publications");
 
 function publicationsApi(app) {
   const router = express.Router();
   app.use("/api/publications", router);
 
+  const publicationsService = new PublicationsService();
+
   router.get("/", async function(req, res, next) {
     try {
-      const publications = await Promise.resolve(publicationsMock);
+      const publications = await publicationsService.getPublications();
 
       res.status(200).json({
         data: publications,
@@ -19,8 +21,12 @@ function publicationsApi(app) {
   });
 
   router.get("/:publicationId", async function(req, res, next) {
+    const { publicationId } = req.params;
+
     try {
-      const publications = await Promise.resolve(publicationsMock[0]);
+      const publications = await publicationsService.getPublication({
+        publicationId
+      });
 
       res.status(200).json({
         data: publications,
@@ -32,10 +38,11 @@ function publicationsApi(app) {
   });
 
   router.post("/", async function(req, res, next) {
+    const { body: publication } = req;
     try {
-      const createdpublicationId = await Promise.resolve(
-        publicationsMock[0].id
-      );
+      const createdpublicationId = await publicationsService.createPublication({
+        publication
+      });
 
       res.status(201).json({
         data: createdpublicationId,
@@ -47,10 +54,14 @@ function publicationsApi(app) {
   });
 
   router.put("/:publicationId", async function(req, res, next) {
+    const { publicationId } = req.params;
+    const { body: publication } = req;
+
     try {
-      const updatedpublicationId = await Promise.resolve(
-        publicationsMock[0].id
-      );
+      const updatedpublicationId = await publicationsService.updatePublication({
+        publicationId,
+        publication
+      });
 
       res.status(200).json({
         data: updatedpublicationId,
@@ -62,10 +73,12 @@ function publicationsApi(app) {
   });
 
   router.delete("/:publicationId", async function(req, res, next) {
+    const { publicationId } = req.params;
+
     try {
-      const deletedpublicationId = await Promise.resolve(
-        publicationsMock[0].id
-      );
+      const deletedpublicationId = await publicationsService.deletePublication({
+        publicationId
+      });
 
       res.status(200).json({
         data: deletedpublicationId,

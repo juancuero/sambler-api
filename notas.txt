@@ -26,7 +26,10 @@ con la siguiente configuracion:
 
 ** Relative Path para que ponga la ruta del archivo
 
+- creo un mock en utils/mocks y lo exporto
+
 - creo una carpeta routes y el archivo
 
-- creo un mock en utils/mocks y lo exporto
+- creo carpeta services
+
 

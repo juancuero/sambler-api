@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 
 const { config } = require("./config/index");
-
 const publicationsApi = require("./routes/publications.js");
 
 publicationsApi(app);
