@@ -32,4 +32,14 @@ con la siguiente configuracion:
 
 - creo carpeta services
 
+- despues de crear la bd en mongo atlas se instalar
+	npm i mongodb
+- Vamos a crear 2 archivos: .env.example y el archivo .env
+
+- modificamos la configuracion
+
+- creamos la carpeta lib y el archivo mongo para la conexion
+
+- cambios los metodos en los servicios
+
 

@@ -1,28 +1,43 @@
-const { publicationsMock } = require("../utils/mocks/publications");
+const MongoLib = require("../lib/mongo");
 
 class PublicationsService {
+  constructor() {
+    this.collection = "publications";
+    this.mongoDB = new MongoLib();
+  }
+
   async getPublications() {
-    const publications = await Promise.resolve(publicationsMock);
+    const publications = await this.mongoDB.getAll(this.collection);
     return publications || [];
   }
 
-  async getPublication() {
-    const publication = await Promise.resolve(publicationsMock[0]);
+  async getPublication({ publicationId }) {
+    const publication = await this.mongoDB.get(this.collection, publicationId);
     return publication || {};
   }
 
-  async createPublication() {
-    const createpublicationId = await Promise.resolve(publicationsMock[0].id);
+  async createPublication({ publication }) {
+    const createpublicationId = await this.mongoDB.create(
+      this.collection,
+      publication
+    );
     return createpublicationId;
   }
 
-  async updatePublication() {
-    const updatedpublicationId = await Promise.resolve(publicationsMock[0].id);
+  async updatePublication({ publicationId, publication } = {}) {
+    const updatedpublicationId = await this.mongoDB.update(
+      this.collection,
+      publicationId,
+      publication
+    );
     return updatedpublicationId;
   }
 
-  async deletePublication() {
-    const deletedpublicationId = await Promise.resolve(publicationsMock[0].id);
+  async deletePublication({ publicationId }) {
+    const deletedpublicationId = await await this.mongoDB.delete(
+      this.collection,
+      publicationId
+    );
     return deletedpublicationId;
   }
 }
