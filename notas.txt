@@ -1,0 +1,27 @@
+- crear carpeta y ejecutar npm init -y
+
+- cambiar scritps
+
+- los archivos de prettier y eslint
+
+- instalar dependencias:
+
+	npm i express dotenv
+	npm i -D nodemon eslint eslint-config-prettier eslint-plugin-prettier prettier
+	npx mrm lint-staged
+
+- crear carpeta de config + index.js
+
+** Para configurar VSCODE se agregan las dos librerias:
+	https://medium.com/@icruzr93/c%C3%B3mo-configurar-eslint-y-prettier-en-vscode-para-un-proyecto-en-react-5f6324e582a9
+
+	
+con la siguiente configuracion:
+	"editor.formatOnPaste": true,
+    	"editor.formatOnSave": true,
+    	"editor.formatOnType": true,
+    	"prettier-eslint.eslintIntegration": true
+
+- se crear el archivo index.js en raiz y se crea el hola mundo
+
+** Relative Path para que ponga la ruta del archivo
