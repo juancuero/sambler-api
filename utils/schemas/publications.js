@@ -14,12 +14,12 @@ const pulicationSharesSchema = joi
   .min(0)
   .default(0);
 
-const createPublicationchema = {
+const createPublicationchema = joi.object({
   title: publicationTitleSchema.required(),
   description: publicationDescriptionSchema.required(),
   likes: pulicationLikesSchema.required(),
   shares: pulicationSharesSchema.required()
-};
+});
 
 module.exports = {
   publicationIdSchema,

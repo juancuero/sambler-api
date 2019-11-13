@@ -1,4 +1,5 @@
 const express = require("express");
+const joi = require("@hapi/joi");
 const PublicationsService = require("../services/publications");
 
 const {
@@ -27,22 +28,29 @@ function publicationsApi(app) {
     }
   });
 
-  router.get("/:publicationId", async function(req, res, next) {
-    const { publicationId } = req.params;
+  router.get(
+    "/:publicationId",
+    validationHandler(
+      joi.object({ publicationId: publicationIdSchema }),
+      "params"
+    ),
+    async function(req, res, next) {
+      const { publicationId } = req.params;
 
-    try {
-      const publications = await publicationsService.getPublication({
-        publicationId
-      });
+      try {
+        const publications = await publicationsService.getPublication({
+          publicationId
+        });
 
-      res.status(200).json({
-        data: publications,
-        message: "publication retrieved"
-      });
-    } catch (err) {
-      next(err);
+        res.status(200).json({
+          data: publications,
+          message: "publication retrieved"
+        });
+      } catch (err) {
+        next(err);
+      }
     }
-  });
+  );
 
   router.post("/", validationHandler(createPublicationchema), async function(
     req,
