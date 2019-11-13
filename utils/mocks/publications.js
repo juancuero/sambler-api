@@ -99,6 +99,17 @@ const publicationsMock = [
   }
 ];
 
+class PublicationsServiceMock {
+  async getPublications() {
+    return Promise.resolve(publicationsMock);
+  }
+
+  async createPublication() {
+    return Promise.resolve(publicationsMock[0]);
+  }
+}
+
 module.exports = {
-  publicationsMock
+  publicationsMock,
+  PublicationsServiceMock
 };

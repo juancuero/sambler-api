@@ -4,7 +4,8 @@ const PublicationsService = require("../services/publications");
 
 const {
   publicationIdSchema,
-  createPublicationchema
+  createPublicationchema,
+  updatePublicationchema
 } = require("../utils/schemas/publications");
 
 const validationHandler = require("../utils/middleware/validationHandler");
@@ -72,41 +73,60 @@ function publicationsApi(app) {
     }
   });
 
-  router.put("/:publicationId", async function(req, res, next) {
-    const { publicationId } = req.params;
-    const { body: publication } = req;
+  router.put(
+    "/:publicationId",
+    validationHandler(
+      joi.object({ publicationId: publicationIdSchema }),
+      "params"
+    ),
+    validationHandler(updatePublicationchema),
+    async function(req, res, next) {
+      const { publicationId } = req.params;
+      const { body: publication } = req;
 
-    try {
-      const updatedpublicationId = await publicationsService.updatePublication({
-        publicationId,
-        publication
-      });
+      try {
+        const updatedpublicationId = await publicationsService.updatePublication(
+          {
+            publicationId,
+            publication
+          }
+        );
 
-      res.status(200).json({
-        data: updatedpublicationId,
-        message: "publication updated"
-      });
-    } catch (err) {
-      next(err);
+        res.status(200).json({
+          data: updatedpublicationId,
+          message: "publication updated"
+        });
+      } catch (err) {
+        next(err);
+      }
     }
-  });
+  );
 
-  router.delete("/:publicationId", async function(req, res, next) {
-    const { publicationId } = req.params;
+  router.delete(
+    "/:publicationId",
+    validationHandler(
+      joi.object({ publicationId: publicationIdSchema }),
+      "params"
+    ),
+    async function(req, res, next) {
+      const { publicationId } = req.params;
 
-    try {
-      const deletedpublicationId = await publicationsService.deletePublication({
-        publicationId
-      });
+      try {
+        const deletedpublicationId = await publicationsService.deletePublication(
+          {
+            publicationId
+          }
+        );
 
-      res.status(200).json({
-        data: deletedpublicationId,
-        message: "publication deleted"
-      });
-    } catch (err) {
-      next(err);
+        res.status(200).json({
+          data: deletedpublicationId,
+          message: "publication deleted"
+        });
+      } catch (err) {
+        next(err);
+      }
     }
-  });
+  );
 }
 
 module.exports = publicationsApi;

@@ -21,7 +21,13 @@ const createPublicationchema = joi.object({
   shares: pulicationSharesSchema.required()
 });
 
+const updatePublicationchema = joi.object({
+  title: publicationTitleSchema.required(),
+  description: publicationDescriptionSchema.required()
+});
+
 module.exports = {
   publicationIdSchema,
-  createPublicationchema
+  createPublicationchema,
+  updatePublicationchema
 };
