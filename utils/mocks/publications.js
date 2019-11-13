@@ -7,8 +7,6 @@ const publicationsMock = [
       "quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce",
     likes: 12,
     shares: 10,
-    user: { name: "Jehu Braley", username: "jbraley0" },
-    categories: [{ title: "Thefts" }],
     createdAt: "17/12/2018"
   },
   {
@@ -19,8 +17,6 @@ const publicationsMock = [
       "imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis",
     likes: 2,
     shares: 5,
-    user: { name: "Stirling Duffield", username: "sduffield1" },
-    categories: [{ title: "Thefts" }],
     createdAt: "11/11/2018"
   },
   {
@@ -31,12 +27,6 @@ const publicationsMock = [
       "et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus",
     likes: 11,
     shares: 2,
-    user: { name: "Gonzalo Fasse", username: "gfasse2" },
-    categories: [
-      { title: "Thefts" },
-      { title: "Accidents" },
-      { title: "Homicides" }
-    ],
     createdAt: "15/01/2019"
   },
   {
@@ -47,8 +37,6 @@ const publicationsMock = [
       "morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus",
     likes: 9,
     shares: 7,
-    user: { name: "Johnette Cotter", username: "jcotter3" },
-    categories: [{ title: "Thefts" }],
     createdAt: "31/10/2019"
   },
   {
@@ -58,8 +46,6 @@ const publicationsMock = [
       "sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis",
     likes: 7,
     shares: 5,
-    user: { name: "Nikki Walklott", username: "nwalklott4" },
-    categories: [{ title: "Thefts" }],
     createdAt: "16/11/2018"
   },
   {
@@ -69,8 +55,6 @@ const publicationsMock = [
       "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh",
     likes: 11,
     shares: 5,
-    user: { name: "Lilyan Eastcourt", username: "leastcourt5" },
-    categories: [{ title: "Thefts" }],
     createdAt: "08/07/2019"
   },
   {
@@ -81,12 +65,6 @@ const publicationsMock = [
       "neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec",
     likes: 2,
     shares: 6,
-    user: { name: "Julianne Hinemoor", username: "jhinemoor6" },
-    categories: [
-      { title: "Thefts" },
-      { title: "Accidents" },
-      { title: "Homicides" }
-    ],
     createdAt: "01/08/2019"
   },
   {
@@ -97,8 +75,6 @@ const publicationsMock = [
       "adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non",
     likes: 8,
     shares: 4,
-    user: { name: "Gunar Sixsmith", username: "gsixsmith7" },
-    categories: [{ title: "Thefts" }],
     createdAt: "31/03/2019"
   },
   {
@@ -109,8 +85,6 @@ const publicationsMock = [
       "morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet",
     likes: 8,
     shares: 5,
-    user: { name: "Hinda Andreichik", username: "handreichik8" },
-    categories: [{ title: "Thefts" }, { title: "Accidents" }],
     createdAt: "10/12/2018"
   },
   {
@@ -121,8 +95,6 @@ const publicationsMock = [
       "a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit",
     likes: 8,
     shares: 10,
-    user: { name: "Peggie Newiss", username: "pnewiss9" },
-    categories: [{ title: "Thefts" }],
     createdAt: "09/02/2019"
   }
 ];

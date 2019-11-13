@@ -1,6 +1,13 @@
 const express = require("express");
 const PublicationsService = require("../services/publications");
 
+const {
+  publicationIdSchema,
+  createPublicationchema
+} = require("../utils/schemas/publications");
+
+const validationHandler = require("../utils/middleware/validationHandler");
+
 function publicationsApi(app) {
   const router = express.Router();
   app.use("/api/publications", router);
@@ -37,7 +44,11 @@ function publicationsApi(app) {
     }
   });
 
-  router.post("/", async function(req, res, next) {
+  router.post("/", validationHandler(createPublicationchema), async function(
+    req,
+    res,
+    next
+  ) {
     const { body: publication } = req;
     try {
       const createdpublicationId = await publicationsService.createPublication({
