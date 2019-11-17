@@ -10,6 +10,12 @@ const {
 
 const validationHandler = require("../utils/middleware/validationHandler");
 
+const cacheResponse = require("../utils/cacheResponse");
+const {
+  FIVE_MINUTES_IN_SECONDS,
+  SIXTY_MINUTES_IN_SECONDS
+} = require("../utils/time");
+
 function publicationsApi(app) {
   const router = express.Router();
   app.use("/api/publications", router);
@@ -17,6 +23,7 @@ function publicationsApi(app) {
   const publicationsService = new PublicationsService();
 
   router.get("/", async function(req, res, next) {
+    cacheResponse(res, FIVE_MINUTES_IN_SECONDS);
     try {
       const publications = await publicationsService.getPublications();
 
@@ -36,6 +43,7 @@ function publicationsApi(app) {
       "params"
     ),
     async function(req, res, next) {
+      cacheResponse(res, SIXTY_MINUTES_IN_SECONDS);
       const { publicationId } = req.params;
 
       try {
