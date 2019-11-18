@@ -3,6 +3,7 @@ const app = express();
 
 const { config } = require("./config/index");
 const publicationsApi = require("./routes/publications.js");
+const userPublicationsApi = require("./routes/userPublications.js");
 
 const {
   logErrors,
@@ -17,6 +18,7 @@ app.use(express.json());
 
 // routes
 publicationsApi(app);
+userPublicationsApi(app);
 
 // Catch 404
 app.use(notFoundHandler);

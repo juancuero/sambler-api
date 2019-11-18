@@ -25,7 +25,7 @@ function publicationsApi(app) {
   router.get("/", async function(req, res, next) {
     cacheResponse(res, FIVE_MINUTES_IN_SECONDS);
     try {
-      const publications = await publicationsService.getPublications();
+      const publications = await publicationsService.getPublications({});
 
       res.status(200).json({
         data: publications,

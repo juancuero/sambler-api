@@ -7,7 +7,7 @@ class PublicationsService {
   }
 
   async getPublications() {
-    const publications = await this.mongoDB.getAll(this.collection);
+    const publications = await this.mongoDB.getAll(this.collection, {});
     return publications || [];
   }
 
